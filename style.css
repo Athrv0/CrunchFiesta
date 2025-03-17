@@ -1,83 +1,83 @@
-:root {
-    --primary-color: #4CAF50; /* Green */
-    --text-color: white;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
+    background-color: #f2f2f2;
 }
 
+/* Header */
 header {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background-color: #228B22;
+    color: white;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
+    color: white;
     text-decoration: none;
-    color: var(--text-color);
     font-weight: bold;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* Side Menu */
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #228B22;
+    color: white;
+    padding: 20px;
+    transition: 0.3s;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
+#side-menu a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#side-menu a:hover {
+    background-color: lightgreen;
+}
+
+/* Best Sellers */
+.best-sellers, .offers, .reviews, .location {
+    padding: 20px;
+}
+
+.best-sellers .items {
+    display: flex;
+    gap: 15px;
+}
+
+.best-sellers .item {
+    cursor: pointer;
     background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 120px;
-    z-index: 1;
-}
-
-.dropdown-menu li {
-    display: block;
     padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+.best-sellers .item:hover {
+    background: lightgreen;
 }
 
-.item {
-    display: inline-block;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.item img {
-    width: 150px;
-    height: auto;
-    border-radius: 8px;
-}
-
-button {
-    background: var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
+/* Footer */
 footer {
-    background: var(--primary-color);
-    color: var(--text-color);
+    background: #228B22;
+    color: white;
+    text-align: center;
     padding: 10px;
-    margin-top: 20px;
 }
