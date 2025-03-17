@@ -4,84 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrunchFiesta Café</title>
-    <link rel="stylesheet" href="styles.css"> <!-- CSS Linked -->
-    <script src="script.js" defer></script> <!-- JS Linked -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header>
-        <h1 class="logo">CrunchFiesta</h1>
+        <h1>CrunchFiesta</h1>
         <nav>
             <ul>
-                <li><a href="#" onclick="toggleMenu()">Menu</a></li>
-                <li><a href="about.html">Why Us?</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Why Us?</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">☰</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="drinks.html">Drinks</a></li>
+                        <li><a href="pizza.html">Pizza</a></li>
+                        <li><a href="pasta.html">Pasta</a></li>
+                        <li><a href="pastries.html">Pastries</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- Side Menu -->
-    <div id="side-menu">
-        <ul>
-            <li><a href="drinks.html">Drinks</a></li>
-            <li><a href="pizza.html">Pizza</a></li>
-            <li><a href="pasta.html">Pasta</a></li>
-            <li><a href="pastries.html">Pastries</a></li>
-        </ul>
-    </div>
-
-    <!-- Home Page Main Content -->
     <main>
-        <section class="hero">
-            <h2>Welcome to CrunchFiesta Café</h2>
-            <p>Delicious Food & Refreshing Drinks!</p>
-        </section>
+        <h2>Welcome to CrunchFiesta Café</h2>
+        <p>Delicious Food & Refreshing Drinks!</p>
 
-        <!-- Best Sellers -->
         <section class="best-sellers">
-            <h2>🔥 Best Sellers</h2>
-            <div class="items">
-                <div class="item" onclick="addToCart('Cheesy Burst Pizza', 399)">
-                    <img src="pizza.jpg" alt="Cheesy Burst Pizza">
-                    <p>Cheesy Burst Pizza - ₹399</p>
-                </div>
-                <div class="item" onclick="addToCart('Choco Lava Cake', 199)">
-                    <img src="cake.jpg" alt="Choco Lava Cake">
-                    <p>Choco Lava Cake - ₹199</p>
-                </div>
-                <div class="item" onclick="addToCart('Cold Coffee', 149)">
-                    <img src="coffee.jpg" alt="Cold Coffee">
-                    <p>Cold Coffee - ₹149</p>
-                </div>
+            <h3>🔥 Best Sellers</h3>
+            <div class="item" onclick="addToCart('Cheesy Burst Pizza', 399)">
+                <img src="images/pizza.jpg" alt="Cheesy Pizza">
+                <p>Cheesy Burst Pizza - ₹399</p>
+            </div>
+            <div class="item" onclick="addToCart('Choco Lava Cake', 199)">
+                <img src="images/cake.jpg" alt="Choco Lava Cake">
+                <p>Choco Lava Cake - ₹199</p>
+            </div>
+            <div class="item" onclick="addToCart('Cold Coffee', 149)">
+                <img src="images/coffee.jpg" alt="Cold Coffee">
+                <p>Cold Coffee - ₹149</p>
             </div>
         </section>
 
-        <!-- Offers Section -->
-        <section class="offers">
-            <h2>⚡ Live Offers</h2>
-            <p>🔥 Order above ₹500 & Get 10% OFF!</p>
-            <p>⚡ Happy Hours (4-7 PM): Buy 1 Get 1 Free on Coffee!</p>
-        </section>
-
-        <!-- Reviews -->
-        <section class="reviews">
-            <h2>💬 Customer Reviews</h2>
-            <p>⭐⭐⭐⭐⭐ "Best Café in town! Loved the taste!" – Ramesh K.</p>
-            <p>⭐⭐⭐⭐⭐ "Amazing service and great food!" – Priya M.</p>
-        </section>
-
-        <!-- Location -->
-        <section class="location">
-            <h2>📍 Visit Us</h2>
-            <iframe src="https://www.google.com/maps/embed?..."></iframe>
-        </section>
+        <h3>🛒 Your Cart (<span id="cart-count">0</span>)</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Order on WhatsApp</button>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2025 CrunchFiesta Café. All rights reserved.</p>
-        <p>📞 +91 8779989576 | 📲 <a href="https://wa.me/918779989576">WhatsApp Order</a></p>
+        <p>© 2025 CrunchFiesta Café | Contact: 9876543210 | All Rights Reserved</p>
     </footer>
 
 </body>
