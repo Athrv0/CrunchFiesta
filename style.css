@@ -1,14 +1,12 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    text-align: center;
 }
 
-/* Header */
 header {
-    background-color: #228B22;
+    background-color: #4CAF50;
     color: white;
     padding: 15px;
     display: flex;
@@ -18,8 +16,12 @@ header {
 
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
-    gap: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav a {
@@ -28,56 +30,74 @@ nav a {
     font-weight: bold;
 }
 
-/* Side Menu */
-#side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: #228B22;
+#menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
     color: white;
-    padding: 20px;
-    transition: 0.3s;
-}
-
-#side-menu a {
-    display: block;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-}
-
-#side-menu a:hover {
-    background-color: lightgreen;
-}
-
-/* Best Sellers */
-.best-sellers, .offers, .reviews, .location {
-    padding: 20px;
-}
-
-.best-sellers .items {
-    display: flex;
-    gap: 15px;
-}
-
-.best-sellers .item {
     cursor: pointer;
-    background: white;
-    padding: 10px;
+}
+
+.hero {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.best-sellers, .location, .reviews, .whatsapp-order {
+    padding: 20px;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
-    transition: 0.3s;
 }
 
-.best-sellers .item:hover {
-    background: lightgreen;
-}
-
-/* Footer */
-footer {
-    background: #228B22;
+button {
+    background-color: #4CAF50;
     color: white;
-    text-align: center;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #388E3C;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
     padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #4CAF50;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #menu-btn {
+        display: block;
+    }
 }
