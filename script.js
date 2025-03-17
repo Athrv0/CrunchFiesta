@@ -8,6 +8,7 @@ function addToCart(name, price) {
 function updateCart() {
     let cartItems = document.getElementById("cart-items");
     let cartTotal = document.getElementById("cart-total");
+    let cartCount = document.getElementById("cart-count");
 
     cartItems.innerHTML = "";
     let total = 0;
@@ -20,6 +21,7 @@ function updateCart() {
     });
 
     cartTotal.textContent = total;
+    cartCount.textContent = cart.length;
 }
 
 function checkout() {
