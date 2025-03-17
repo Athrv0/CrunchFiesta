@@ -1,3 +1,4 @@
+// script.js
 let cart = [];
 
 function addToCart(name, price) {
@@ -40,16 +41,14 @@ function checkout() {
     window.open(whatsappURL, "_blank");
 }
 
-function toggleSubMenu(id) {
-    let menu = document.getElementById(id);
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
+// Responsive Side Menu
+function toggleMenu() {
+    let menu = document.getElementById("side-menu");
+    menu.classList.toggle("open");
 }
 
-function toggleCart() {
-    let cartSection = document.querySelector(".cart");
-    cartSection.style.display = cartSection.style.display === "none" ? "block" : "none";
+// Order Tracking System
+function updateOrderStatus(status) {
+    let statusText = document.getElementById("order-status");
+    statusText.textContent = status;
 }
