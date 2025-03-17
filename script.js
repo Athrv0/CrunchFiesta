@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let links = document.querySelectorAll("nav ul li a");
-    let currentPage = window.location.pathname.split("/").pop();
-    
-    links.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
-    });
-});
+    let modal = document.getElementById("signup-modal");
+    let btn = document.getElementById("signup-btn");
+    let closeBtn = document.querySelector(".close");
 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    };
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});
