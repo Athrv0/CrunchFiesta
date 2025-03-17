@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crunch Fiesta</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <nav>
-        <h1 class="logo">Crunch Fiesta</h1>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li class="dropdown">
-                <a href="menu.html">Menu ▼</a>
-                <ul class="submenu">
-                    <li><a href="drinks.html">Drinks</a></li>
-                    <li><a href="pizzas.html">Pizzas</a></li>
-                    <li><a href="pasta.html">Pasta</a></li>
-                    <li><a href="cakes.html">cakes</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
     <header>
-        <h2>Welcome to <span>Crunch Fiesta</span></h2>
-        <p>Enjoy pizzas, pastas, drinks, and pastries!</p>
-        <a href="menu.html" class="btn">See Details</a>
+        <div class="logo">crunch fiesta</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Menu</a>
+                    <ul class="submenu">
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Pasta</a></li>
+                        <li><a href="#">Pastries</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#" id="signup-btn">Sign Up</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="animation">
-        <img src="cup.png" class="cup">
-        <img src="icecream.png" class="icecream">
+    <section class="hero">
+        <div class="text">
+            <h1>WELCOME TO <span>crunch fiesta</span></h1>
+            <p>where every bite is a burst of flavor! Enjoy freshly made pizzas, pastas, drinks, and pastries.</p>
+            <button class="details-btn">See Details</button>
+        </div>
+        <div class="floating-images">
+            <img src="cup.png" alt="Cup" class="floating cup">
+            <img src="ice-cream.png" alt="Ice Cream" class="floating ice-cream">
+        </div>
+    </section>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Enter Your Name" id="name">
+            <input type="email" placeholder="Enter Your Email" id="email">
+            <button class="signup-btn">Submit</button>
+        </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
