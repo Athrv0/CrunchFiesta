@@ -1,80 +1,71 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f2f2f2;
 }
 
-/* Header */
 header {
-    background-color: #4CAF50;
+    background-color: #228B22;
     color: white;
     padding: 15px;
-    text-align: center;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Menu Button */
-.menu-btn {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 20px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Sidebar Menu */
-#side-menu {
-    width: 0;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-#side-menu ul {
+nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
-#side-menu ul li {
-    padding: 10px;
-}
-
-#side-menu ul li a {
+nav a {
+    color: white;
     text-decoration: none;
-    color: white;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
+    font-weight: bold;
 }
 
-#side-menu ul li a:hover {
-    background-color: #4CAF50;
-}
-
-/* Main Content */
-.container {
-    text-align: center;
-    padding: 50px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+#side-menu {
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #228B22;
+    color: white;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+#side-menu.open {
+    left: 0;
+}
+
+.best-sellers, .offers, .reviews, .location {
+    padding: 20px;
+}
+
+.best-sellers .items {
+    display: flex;
+    gap: 15px;
+}
+
+.best-sellers .item {
+    cursor: pointer;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.best-sellers .item:hover {
+    background: lightgreen;
+}
+
+footer {
+    background: #228B22;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
