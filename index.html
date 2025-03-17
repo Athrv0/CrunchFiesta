@@ -3,38 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrunchFiesta - Order Online</title>
+    <title>CrunchFiesta - Order Now</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>CrunchFiesta</h1>
-        <p>Pizza 🍕 | Pasta 🍝 | Pastries 🥐</p>
+        <h1>CrunchFiesta 🍕🍔</h1>
     </header>
 
     <section class="menu">
         <div class="item">
             <h2>Margherita Pizza</h2>
-            <p>Classic cheese & tomato pizza.</p>
-            <button onclick="addToCart('Margherita Pizza', 299)">Add to Cart - ₹299</button>
+            <p>Classic cheese pizza with fresh tomato sauce.</p>
+            <span>₹250</span>
+            <button onclick="addToCart('Margherita Pizza', 250)">Add to Cart</button>
         </div>
+
         <div class="item">
             <h2>White Sauce Pasta</h2>
-            <p>Creamy & cheesy pasta.</p>
-            <button onclick="addToCart('White Sauce Pasta', 249)">Add to Cart - ₹249</button>
+            <p>Creamy white sauce pasta with mushrooms.</p>
+            <span>₹200</span>
+            <button onclick="addToCart('White Sauce Pasta', 200)">Add to Cart</button>
         </div>
+
         <div class="item">
             <h2>Chocolate Pastry</h2>
-            <p>Rich chocolate delight.</p>
-            <button onclick="addToCart('Chocolate Pastry', 149)">Add to Cart - ₹149</button>
+            <p>Rich chocolate pastry with layers of cream.</p>
+            <span>₹100</span>
+            <button onclick="addToCart('Chocolate Pastry', 100)">Add to Cart</button>
         </div>
     </section>
 
     <section class="cart">
-        <h2>Your Cart 🛒</h2>
+        <h2>Your Cart 🛒 (<span id="cart-count">0</span>)</h2>
         <ul id="cart-items"></ul>
-        <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
-        <button onclick="checkout()">Checkout on WhatsApp</button>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Order on WhatsApp</button>
     </section>
 
     <script src="script.js"></script>
