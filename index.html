@@ -3,67 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrunchFiesta Café</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Crunch Fiesta</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>CrunchFiesta</h1>
+        <div class="logo">crunch fiesta</div>
         <nav>
-            <ul id="nav-links">
+            <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Why Us?</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Menu</a>
+                    <ul class="submenu">
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Pasta</a></li>
+                        <li><a href="#">Pastries</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#" id="signup-btn">Sign Up</a></li>
             </ul>
-            <button id="menu-btn">☰</button>
         </nav>
     </header>
 
     <section class="hero">
-        <h2>Welcome to CrunchFiesta Café</h2>
-        <p>Delicious Food & Refreshing Drinks!</p>
-    </section>
-
-    <section class="best-sellers">
-        <h2>🔥 Best Sellers</h2>
-        <div class="items">
-            <div class="item">
-                <img src="cheesy_pizza.jpg" alt="Cheesy Pizza">
-                <p>Cheesy Burst Pizza - ₹399</p>
-            </div>
-            <div class="item">
-                <img src="choco_cake.jpg" alt="Choco Lava Cake">
-                <p>Choco Lava Cake - ₹199</p>
-            </div>
-            <div class="item">
-                <img src="cold_coffee.jpg" alt="Cold Coffee">
-                <p>Cold Coffee - ₹149</p>
-            </div>
+        <div class="text">
+            <h1>WELCOME TO <span>crunch fiesta</span></h1>
+            <p>where every bite is a burst of flavor! Enjoy freshly made pizzas, pastas, drinks, and pastries.</p>
+            <button class="details-btn">See Details</button>
+        </div>
+        <div class="floating-images">
+            <img src="cup.png" alt="Cup" class="floating cup">
+            <img src="ice-cream.png" alt="Ice Cream" class="floating ice-cream">
         </div>
     </section>
 
-    <section class="location">
-        <h2>📍 Our Location</h2>
-        <p>XYZ Street, Kota, Rajasthan</p>
-    </section>
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Enter Your Name" id="name">
+            <input type="email" placeholder="Enter Your Email" id="email">
+            <button class="signup-btn">Submit</button>
+        </div>
+    </div>
 
-    <section class="reviews">
-        <h2>💬 Customer Reviews</h2>
-        <p>⭐⭐⭐⭐⭐ "Best Café in town! Loved the taste!" - Ramesh K.</p>
-    </section>
-
-    <section class="whatsapp-order">
-        <h2>🛒 Your Cart (0)</h2>
-        <p>Total: ₹0</p>
-        <button onclick="orderOnWhatsApp()">Order on WhatsApp</button>
-    </section>
-
-    <footer>
-        <p>© 2025 CrunchFiesta Café | Contact: 9876543210 | All Rights Reserved</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
