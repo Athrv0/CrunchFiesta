@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Website</title>
+    <title>CrunchFiesta - Café</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- Hero Section (Cafe Name + Photos) -->
+    <!-- Header with Café Name -->
     <header>
-        <h1>Crispy Cravings</h1>
+        <h1>CrunchFiesta</h1>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </header>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <ul id="menu">
-            <li onclick="showSubmenu('drinks')">Drinks</li>
-            <li onclick="showSubmenu('pizza')">Pizza</li>
-            <li onclick="showSubmenu('pasta')">Pasta</li>
-            <li onclick="showSubmenu('cafe')">Café</li>
-            <li onclick="showSubmenu('pastry')">Pastry</li>
-            <li onclick="showSubmenu('why-us')">Why Us?</li>
+    <!-- Sidebar Menu -->
+    <nav id="side-menu">
+        <ul>
+            <li><a href="drinks.html">Drinks</a></li>
+            <li><a href="pizza.html">Pizza</a></li>
+            <li><a href="pasta.html">Pasta</a></li>
+            <li><a href="pastry.html">Pastry</a></li>
+            <li><a href="cafe.html">Café</a></li>
+            <li><a href="why-us.html">Why Us?</a></li>
         </ul>
     </nav>
 
-    <!-- Dynamic Menu Content -->
-    <div id="menu-content">
-        <p>Select a menu item to see details.</p>
-    </div>
+    <!-- Main Section -->
+    <section class="container">
+        <h2>Welcome to CrunchFiesta!</h2>
+        <p>Enjoy our delicious menu with fast delivery.</p>
+    </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>All Rights Reserved © 2025 | Contact: 8779989576</p>
+        <p>All Rights Reserved © 2025 CrunchFiesta</p>
+        <p>Contact: <a href="tel:+918779989576">+91 8779989576</a></p>
     </footer>
 
 </body>
