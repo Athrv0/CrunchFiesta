@@ -1,12 +1,17 @@
-document.getElementById("menu-btn").addEventListener("click", function () {
-    document.getElementById("nav-links").classList.toggle("active");
+document.addEventListener("DOMContentLoaded", function() {
+    let modal = document.getElementById("signup-modal");
+    let btn = document.getElementById("signup-btn");
+    let closeBtn = document.querySelector(".close");
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    };
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 });
-
-function orderOnWhatsApp() {
-    let totalAmount = 0; // Update this with actual cart total
-    let location = "XYZ Street, Kota, Rajasthan"; 
-    let message = `Hello, I want to place an order. My total is ₹${totalAmount}. Deliver it to ${location}.`;
-
-    let whatsappURL = `https://wa.me/9876543210?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, "_blank");
-}
