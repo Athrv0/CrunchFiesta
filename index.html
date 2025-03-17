@@ -3,40 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrunchFiesta - Café</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CrunchFiesta Café</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- Header with Café Name -->
+    <!-- Navigation Bar -->
     <header>
-        <h1>CrunchFiesta</h1>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <h1 class="logo">CrunchFiesta</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="toggleMenu()">Menu</a></li>
+                <li><a href="about.html">Why Us?</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Sidebar Menu -->
-    <nav id="side-menu">
+    <!-- Side Menu -->
+    <div id="side-menu">
         <ul>
-            <li><a href="drinks.html">Drinks</a></li>
-            <li><a href="pizza.html">Pizza</a></li>
-            <li><a href="pasta.html">Pasta</a></li>
-            <li><a href="pastry.html">Pastry</a></li>
-            <li><a href="cafe.html">Café</a></li>
-            <li><a href="why-us.html">Why Us?</a></li>
+            <li onclick="showSubMenu('drinks')">Drinks</li>
+            <li onclick="showSubMenu('pizza')">Pizza</li>
+            <li onclick="showSubMenu('pasta')">Pasta</li>
+            <li onclick="showSubMenu('pastries')">Pastries</li>
         </ul>
-    </nav>
+    </div>
 
-    <!-- Main Section -->
-    <section class="container">
-        <h2>Welcome to CrunchFiesta!</h2>
-        <p>Enjoy our delicious menu with fast delivery.</p>
-    </section>
+    <!-- Home Page Main Content -->
+    <main>
+        <section class="hero">
+            <h2>Welcome to CrunchFiesta Café</h2>
+            <p>Delicious Food & Refreshing Drinks!</p>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="best-sellers">
+            <h2>🔥 Best Sellers</h2>
+            <div class="items">
+                <div class="item" onclick="addToCart('Cheesy Burst Pizza', 399)">
+                    <img src="pizza.jpg" alt="Cheesy Burst Pizza">
+                    <p>Cheesy Burst Pizza - ₹399</p>
+                </div>
+                <div class="item" onclick="addToCart('Choco Lava Cake', 199)">
+                    <img src="cake.jpg" alt="Choco Lava Cake">
+                    <p>Choco Lava Cake - ₹199</p>
+                </div>
+                <div class="item" onclick="addToCart('Cold Coffee', 149)">
+                    <img src="coffee.jpg" alt="Cold Coffee">
+                    <p>Cold Coffee - ₹149</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers Section -->
+        <section class="offers">
+            <h2>⚡ Live Offers</h2>
+            <p>🔥 Order above ₹500 & Get 10% OFF!</p>
+            <p>⚡ Happy Hours (4-7 PM): Buy 1 Get 1 Free on Coffee!</p>
+        </section>
+
+        <!-- Reviews -->
+        <section class="reviews">
+            <h2>💬 Customer Reviews</h2>
+            <p>⭐⭐⭐⭐⭐ "Best Café in town! Loved the taste!" – Ramesh K.</p>
+            <p>⭐⭐⭐⭐⭐ "Amazing service and great food!" – Priya M.</p>
+        </section>
+
+        <!-- Location -->
+        <section class="location">
+            <h2>📍 Visit Us</h2>
+            <iframe src="https://www.google.com/maps/embed?..."></iframe>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>All Rights Reserved © 2025 CrunchFiesta</p>
-        <p>Contact: <a href="tel:+918779989576">+91 8779989576</a></p>
+        <p>© 2025 CrunchFiesta Café. All rights reserved.</p>
+        <p>📞 +91 8779989576 | 📲 <a href="https://wa.me/918779989576">WhatsApp Order</a></p>
     </footer>
 
 </body>
