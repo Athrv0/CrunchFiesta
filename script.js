@@ -39,3 +39,17 @@ function checkout() {
     let whatsappURL = `https://wa.me/918779989576?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, "_blank");
 }
+
+function toggleSubMenu(id) {
+    let menu = document.getElementById(id);
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
+
+function toggleCart() {
+    let cartSection = document.querySelector(".cart");
+    cartSection.style.display = cartSection.style.display === "none" ? "block" : "none";
+}
