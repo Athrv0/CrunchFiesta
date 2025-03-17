@@ -23,15 +23,22 @@ function checkout() {
     });
     message += `Total: ₹${document.getElementById("cart-total").textContent}`;
 
-    let whatsappURL = `https://wa.me/918779989576?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, "_blank");
+    // Auto-send location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            message += `\nMy Location: https://www.google.com/maps?q=${lat},${lon}`;
+
+            let whatsappURL = `https://wa.me/918779989576?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+        });
+    } else {
+        alert("Geolocation is not supported.");
+    }
 }
 
 function toggleMenu() {
     let menu = document.getElementById("side-menu");
     menu.classList.toggle("open");
-}
-
-function showSubMenu(category) {
-    alert(`Showing menu for ${category}...`);
 }
