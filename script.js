@@ -6,22 +6,9 @@ function addToCart(name, price) {
 }
 
 function updateCart() {
-    let cartItems = document.getElementById("cart-items");
     let cartTotal = document.getElementById("cart-total");
-    let cartCount = document.getElementById("cart-count");
-
-    cartItems.innerHTML = "";
-    let total = 0;
-
-    cart.forEach(item => {
-        total += item.price;
-        let li = document.createElement("li");
-        li.textContent = `${item.name} - ₹${item.price}`;
-        cartItems.appendChild(li);
-    });
-
-    cartTotal.textContent = total;
-    cartCount.textContent = cart.length;
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+    cartTotal.textContent = `Total: ₹${total}`;
 }
 
 function checkout() {
@@ -30,20 +17,28 @@ function checkout() {
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(position => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        let locationURL = `https://www.google.com/maps?q=${lat},${lon}`;
-
-        let message = "Hello, I want to order:\n";
-        cart.forEach(item => {
-            message += `${item.name} - ₹${item.price}\n`;
-        });
-        message += `Total: ₹${document.getElementById("cart-total").textContent}\nLocation: ${locationURL}`;
-
-        let whatsappURL = `https://wa.me/918779989576?text=${encodeURIComponent(message)}`;
-        window.open(whatsappURL, "_blank");
-    }, () => {
-        alert("Location access denied. Please enable GPS and try again.");
+    let message = "Hello, I want to order:\n";
+    cart.forEach(item => {
+        message += `${item.name} - ₹${item.price}\n`;
     });
+    message += `Total: ₹${document.getElementById("cart-total").textContent}`;
+
+    // Auto-send location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            let lat = position.coords.latitude;
+            let lon = position.coords.longitude;
+            message += `\nMy Location: https://www.google.com/maps?q=${lat},${lon}`;
+
+            let whatsappURL = `https://wa.me/918779989576?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+        });
+    } else {
+        alert("Geolocation is not supported.");
+    }
+}
+
+function toggleMenu() {
+    let menu = document.getElementById("side-menu");
+    menu.classList.toggle("open");
 }
