@@ -1,141 +1,93 @@
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-body {
-    background: linear-gradient(to right, #135a42, #0c3b2e);
+    background: #0b5d35;
     color: white;
     text-align: center;
 }
-header {
+
+nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 50px;
+    background: #086830;
 }
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
+
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 20px;
 }
+
 nav ul li {
+    margin: 0 10px;
     position: relative;
 }
+
 nav ul li a {
-    text-decoration: none;
     color: white;
-    font-size: 1em;
-    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
+
 nav ul .dropdown:hover .submenu {
     display: block;
 }
+
 .submenu {
     display: none;
     position: absolute;
-    background: white;
-    color: black;
-    list-style: none;
-    top: 100%;
-    left: 0;
-    min-width: 100px;
-}
-.submenu li {
+    background: #0d7a41;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-.submenu li:hover {
-    background: #ddd;
-}
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 5%;
-}
-.text {
-    width: 50%;
-}
-.text h1 {
-    font-size: 2.5em;
-}
-.text span {
-    color: yellow;
-}
-.text p {
-    margin: 10px 0;
-}
-.details-btn {
-    padding: 10px 20px;
-    border: none;
-    background: yellow;
-    color: black;
-    font-size: 1em;
-    cursor: pointer;
-}
-.floating-images {
-    width: 40%;
-    position: relative;
-}
-.floating {
-    width: 120px;
-    position: absolute;
-    animation: float 3s infinite ease-in-out;
-}
-.cup {
-    bottom: 0;
-    left: 10%;
-}
-.ice-cream {
-    bottom: 0;
-    right: 10%;
-    animation-delay: 1s;
-}
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-.modal-content {
-    background: white;
-    color: black;
-    padding: 20px;
-    width: 300px;
-    margin: 100px auto;
-    text-align: center;
-    border-radius: 10px;
-}
-.modal-content input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
     border-radius: 5px;
 }
-.signup-btn {
-    padding: 10px 20px;
-    background: green;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+.submenu li {
+    margin: 5px 0;
 }
-.close {
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
+
+.active {
+    color: yellow;
+}
+
+header {
+    margin: 50px auto;
+    font-size: 24px;
+}
+
+.btn {
+    background: yellow;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.animation img {
+    width: 150px;
+    position: absolute;
+}
+
+.cup {
+    bottom: 50px;
+    left: 20%;
+    animation: moveCup 3s infinite alternate;
+}
+
+.icecream {
+    top: 100px;
+    right: 20%;
+    animation: moveIce 3s infinite alternate;
+}
+
+@keyframes moveCup {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
+}
+
+@keyframes moveIce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
 }
